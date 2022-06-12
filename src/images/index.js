@@ -1,7 +1,9 @@
 import Logo from "./Logo.png";
+import AvatarSample from "./AvatarSample.png";
 
 const Images = {
-    Logo
+    Logo,
+    AvatarSample
 }
 
 export default Images;
