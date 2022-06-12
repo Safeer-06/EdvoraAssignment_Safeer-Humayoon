@@ -1,10 +1,13 @@
 import Images from "./images";
-import { Header } from "./components";
-import './App.css';
+import { Header, Rides } from "./components";
+import "./App.css";
 
 function App() {
   return (
-    <Header />
+    <>
+      <Header />
+      <Rides />
+    </>
   );
 }
 

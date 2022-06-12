@@ -1,9 +1,5 @@
 import Logo from "./Logo.png";
 import AvatarSample from "./AvatarSample.png";
+import FilterIcon from "./FilterIcon.png";
 
-const Images = {
-    Logo,
-    AvatarSample
-}
-
-export default Images;
+export { Logo, AvatarSample, FilterIcon };
