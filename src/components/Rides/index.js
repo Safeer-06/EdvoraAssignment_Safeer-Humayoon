@@ -2,12 +2,14 @@ import React from "react";
 import { Row, Col } from "antd";
 import styled from "styled-components";
 import { FilterIcon } from "../../images";
+import { Ride } from "../";
 
 const RideContainer = styled(Row)`
   min-height: 100vh;
   background-color: #292929;
   padding: 58px 44px;
-
+  align-content: flex-start;
+  
   .tabs {
     display: flex;
     justify-content: space-between;
@@ -61,7 +63,7 @@ const Rides = () => {
           </Col>
         </Row>
       </Col>
-      <Col span={24}></Col>
+      <Col span={24}><Ride /></Col>
     </RideContainer>
   );
 };
