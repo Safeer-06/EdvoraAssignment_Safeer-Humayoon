@@ -25,10 +25,15 @@ const HeaderContainer = styled(Row)`
       display: flex;
       align-items: center;
     }
+    img {
+      height: 44px;
+      width: 44px;
+      border-radius: 100%;
+    }
   }
 `;
 
-const Header = () => {
+const Header = ({ name, url }) => {
   return (
     <HeaderContainer>
       <Col className="logoContainer">
@@ -36,11 +41,9 @@ const Header = () => {
       </Col>
       <Col className="userContainer">
         <Row gutter={[25, 0]}>
-          <Col className="userName">
-            Dhruv Singh
-          </Col>
+          <Col className="userName">{name}</Col>
           <Col>
-            <img src={AvatarSample} alt="avatar" />
+            <img src={url} alt="avatar" />
           </Col>
         </Row>
       </Col>

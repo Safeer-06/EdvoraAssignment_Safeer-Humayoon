@@ -11,7 +11,7 @@ const RideContainer = styled(Row)`
 
   img {
     width: 100%;
-    height: 100%;
+    height: 150px;
     object-fit: cover;
   }
 
@@ -31,37 +31,52 @@ const RideContainer = styled(Row)`
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 4px 10px;
   }
 `;
-const Ride = () => {
+const Ride = ({
+  city,
+  date,
+  destination_station_code,
+  id,
+  map_url,
+  nearestStation,
+  origin_station_code,
+  state,
+  station_path,
+  distance
+}) => {
   return (
     <RideContainer gutter={[44, 0]}>
       <Col span={4}>
-        <img src={MapSample} alt="map" />
+        <img src={map_url} alt="map" />
       </Col>
       <Col flex="1 1 auto">
         <Row gutter={[0, 8]}>
           <Col span={24} className="rideLabel">
-            Ride Id : 002
+            Ride Id : {id}
           </Col>
           <Col span={24} className="rideLabel">
-            Origin Station : 20
+            Origin Station : {origin_station_code}
           </Col>
           <Col span={24} className="rideLabel">
-            station_path : [20, 39, 40, 42, 54, 63, 72, 88, 98]
+            station_path : [{station_path.join(', ')}]
           </Col>
           <Col span={24} className="rideLabel">
-            Date : 15th Feb 2022 16:33
+            Date : {date}
           </Col>
           <Col span={24} className="rideLabel">
-            Distance : 0
+            Distance : {distance}
           </Col>
         </Row>
       </Col>
-      <Col style={{alignSelf: "flex-start"}}><span className="tag">City Name</span></Col>
-      <Col style={{alignSelf: "flex-start"}}><span className="tag">State Name</span></Col>
+      <Col style={{ alignSelf: "flex-start" }}>
+        <span className="tag">{city}</span>
+      </Col>
+      <Col style={{ alignSelf: "flex-start" }}>
+        <span className="tag">{state}</span>
+      </Col>
     </RideContainer>
   );
 };
