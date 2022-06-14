@@ -4,5 +4,5 @@ import Ride from "./Ride";
 export {
     Header,
     Rides,
-    Ride
+    Ride,
 }

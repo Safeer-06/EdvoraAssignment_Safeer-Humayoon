@@ -10,6 +10,10 @@ const HeaderContainer = styled(Row)`
   display: flex;
   justify-content: space-between;
 
+  @media only screen and (max-width: 420px) {
+    height: 120px;
+  }
+  
   .logoContainer {
     display: flex;
     align-items: center;

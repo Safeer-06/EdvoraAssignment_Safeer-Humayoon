@@ -9,17 +9,28 @@ const RideContainer = styled(Row)`
   background-color: #171717;
   padding: 25px;
 
+  @media only screen and (max-width: 1024px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   img {
     width: 100%;
     height: 150px;
     object-fit: cover;
   }
 
-  .rideLabel {
-    color: white;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
+  .rideDetails {
+    .rideLabel {
+      color: white;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    @media only screen and (max-width: 1024px) {
+      text-align: center;
+      width: 100%;
+    }
   }
 
   .tag {
@@ -45,14 +56,14 @@ const Ride = ({
   origin_station_code,
   state,
   station_path,
-  distance
+  distance,
 }) => {
   return (
-    <RideContainer gutter={[44, 0]}>
-      <Col span={4}>
+    <RideContainer gutter={[44, 44]} wrap={false}>
+      <Col xs={24} sm={12} md={10} lg={8} xl={6} xxl={4}>
         <img src={map_url} alt="map" />
       </Col>
-      <Col flex="1 1 auto">
+      <Col className="rideDetails" flex="1 1 auto">
         <Row gutter={[0, 8]}>
           <Col span={24} className="rideLabel">
             Ride Id : {id}
@@ -61,7 +72,7 @@ const Ride = ({
             Origin Station : {origin_station_code}
           </Col>
           <Col span={24} className="rideLabel">
-            station_path : [{station_path.join(', ')}]
+            station_path : [{station_path.join(", ")}]
           </Col>
           <Col span={24} className="rideLabel">
             Date : {date}
